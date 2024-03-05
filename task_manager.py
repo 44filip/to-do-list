@@ -11,12 +11,12 @@ class TaskManager:
         
     def remove(self, title : str):
         # Iterate and create a new list from each task in self.tasks that doesn't match the title
-        self.tasks = [task for task in self.tasks if task.title != title]
+        self.tasks = [task for task in self.tasks if task.title.lower().strip() != title.lower().strip()]
         print("200 - REMOVE OK")
         
     def complete(self, title : str):
         for task in self.tasks:
-            if task.title == title:
+            if task.title.lower().strip() == title.lower().strip():
                 task.completed = True
         print("200 - COMPLETE OK")
                 
