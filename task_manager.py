@@ -10,15 +10,19 @@ class TaskManager:
         print("200 - ADD OK")
         
     def remove(self, title : str):
-        # Iterate and create a new list from each task in self.tasks that doesn't match the title
-        self.tasks = [task for task in self.tasks if task.title.lower().strip() != title.lower().strip()]
-        print("200 - REMOVE OK")
+        for task in self.tasks:
+            if task.title.lower().strip() == title.lower().strip():
+                # Iterate and create a new list from each task in self.tasks that doesn't match the title
+                self.tasks = [task for task in self.tasks if task.title.lower().strip() != title.lower().strip()]
+                return print("200 - REMOVE OK")
+            print("400 - BAD REQUEST")
         
     def complete(self, title : str):
         for task in self.tasks:
             if task.title.lower().strip() == title.lower().strip():
                 task.completed = True
-        print("200 - COMPLETE OK")
+                return print("200 - COMPLETE OK")
+            print("400 - BAD REQUEST")
                 
     def displayTasks(self):
         for task in self.tasks:
