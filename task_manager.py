@@ -26,7 +26,7 @@ class TaskManager:
 
     def displayTasks(self):
         for task in self.tasks:
-            status = "Completed" if task.completed else "Not completed"
+            status = "Completed ✔" if task.completed else "Not completed ❌"
             print(f"{task.title} - {status}")
         return
 
