@@ -19,13 +19,16 @@ while True:
             add_input = input("Enter title of the task to be added: ")
             task_manager.add(add_input)
         case "2":
-            remove_input = input("Enter title of the task to be removed: ")
-            task_manager.remove(remove_input)
+            if task_manager.checkContent():
+                remove_input = input("Enter title of the task to be removed: ")
+                task_manager.remove(remove_input)
         case "3":
-            complete_input = input("Enter title of the task to be marked complete: ")
-            task_manager.complete(complete_input)
+            if task_manager.checkContent():
+                complete_input = input("Enter title of the task to be marked complete: ")
+                task_manager.complete(complete_input)
         case "4":
-            task_manager.displayTasks()
+            if task_manager.checkContent():
+                task_manager.displayTasks()
         case "5":
             exit()
         case _:
