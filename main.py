@@ -11,7 +11,7 @@ task_manager = TaskManager()
 
 print("Welcome to PYTodo")
 while True:
-    print("\n1. Add item to list\n2. Remove item from the list\n3. Mark item as completed\n4. Display all tasks\n5. Exit")
+    print("\n1. Add item to list\n2. Remove item from the list\n3. Mark item as completed\n4. Display all tasks\n5. Exit\n")
     res = input("Enter your choice: ")
 
     match res:
